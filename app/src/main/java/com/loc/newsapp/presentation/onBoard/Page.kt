@@ -1,4 +1,4 @@
-package com.loc.newsapp.presentation.board
+package com.loc.newsapp.presentation.onBoard
 
 import androidx.annotation.DrawableRes
 import com.loc.newsapp.R

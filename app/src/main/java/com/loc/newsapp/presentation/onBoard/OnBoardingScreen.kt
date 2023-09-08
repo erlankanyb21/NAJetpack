@@ -1,4 +1,4 @@
-package com.loc.newsapp.presentation.board
+package com.loc.newsapp.presentation.onBoard
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
@@ -20,15 +20,17 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.loc.newsapp.presentation.Dimens
-import com.loc.newsapp.presentation.board.components.OnBoardingPage
-import com.loc.newsapp.presentation.board.components.PageIndicator
+import com.loc.newsapp.presentation.onBoard.components.OnBoardingPage
+import com.loc.newsapp.presentation.onBoard.components.PageIndicator
 import com.loc.newsapp.presentation.common.NewsButton
 import com.loc.newsapp.presentation.common.NewsTextButton
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun OnBoardingScreen() {
+fun OnBoardingScreen(
+    event: (OnBoardingEvent) -> Unit
+) {
     Column(modifier = Modifier.fillMaxSize()) {
         val pagerState = rememberPagerState(initialPage = 0) {
             pages.size
@@ -76,8 +78,8 @@ fun OnBoardingScreen() {
                 }
                 NewsButton(text = buttonState.value[1], onClick = {
                     scope.launch {
-                        if (pagerState.currentPage == 3) {
-
+                        if (pagerState.currentPage == 2) {
+                            event(OnBoardingEvent.SaveAppEntry)
                         } else pagerState.animateScrollToPage(
                             page = pagerState.currentPage + 1
                         )

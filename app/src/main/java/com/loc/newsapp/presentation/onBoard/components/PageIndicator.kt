@@ -1,4 +1,4 @@
-package com.loc.newsapp.presentation.board.components
+package com.loc.newsapp.presentation.onBoard.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -12,7 +12,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import com.loc.newsapp.presentation.Dimens.IndicatorSize
-import com.loc.newsapp.presentation.board.pages
 import com.loc.newsapp.ui.theme.BlueGray
 
 @Composable
@@ -27,7 +26,9 @@ fun PageIndicator(
     Row(modifier = modifier, horizontalArrangement = Arrangement.SpaceBetween) {
         repeat(pageSize) { page ->
             Box(
-                modifier = Modifier.size(IndicatorSize).clip(CircleShape)
+                modifier = Modifier
+                    .size(IndicatorSize)
+                    .clip(CircleShape)
                     .background(color = if (page == selectedPage) selectedColor else unselectedColor)
             )
         }

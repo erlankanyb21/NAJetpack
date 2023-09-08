@@ -1,4 +1,4 @@
-package com.loc.newsapp.presentation.board.components
+package com.loc.newsapp.presentation.onBoard.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -18,8 +18,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import com.loc.newsapp.R
 import com.loc.newsapp.presentation.Dimens
-import com.loc.newsapp.presentation.board.Page
-import com.loc.newsapp.presentation.board.pages
+import com.loc.newsapp.presentation.onBoard.Page
+import com.loc.newsapp.presentation.onBoard.pages
 import com.loc.newsapp.ui.theme.NewsAppTheme
 
 @Composable
